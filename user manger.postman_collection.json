@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "faa6b4ea-abc8-405e-b02d-cfa47d8770c8",
+		"name": "user manger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiODU1IiwidXNlcl9uYW1lIjoiQHJhaHVsLjY1MCIsImlhdCI6MTYwNTgwNzM3MiwiZXhwIjoxNjM3MzQzMzcyfQ.kpmz1eerFFUqvD155FPNVVeTWWZavq7RMp0JqEmdpe4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "surajuk1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "suraj",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8004/usermanager/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8004",
+					"path": [
+						"usermanager",
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTY3IiwidXNlcl9uYW1lIjoiQGNoaW5qdXN1cGVydmVudWVhZG1pbl81MzY1MSIsImlhdCI6MTU4NjM0Mzk2OSwiZXhwIjoxNTg2Mzg3MTY5fQ.gOoFN_XeExqk8TT9_pDJR8oUnzvSh6bBNO6lVFUZyv4",
+						"disabled": true
+					},
+					{
+						"key": "uid",
+						"type": "text",
+						"value": "167",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "surajuk1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8004/usermanager/v1/users/session",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8004",
+					"path": [
+						"usermanager",
+						"v1",
+						"users",
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cmFqdWsxQGdtYWlsLmNvbSIsIm5hbWUiOiJzdXJhaiIsImlhdCI6MTYwNjMyMDEyNiwiZXhwIjoxNjM3ODU2MTI2fQ.i0MwbsbAfDc89vF0HqtU9FkAZZ9UFscxgqF5heOZ2EU"
+					},
+					{
+						"key": "uid",
+						"type": "text",
+						"value": "167",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8004/usermanager/v1/users/session",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8004",
+					"path": [
+						"usermanager",
+						"v1",
+						"users",
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User ALL",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cmFqdWsxQGdtYWlsLmNvbSIsIm5hbWUiOiJzdXJhaiIsImlhdCI6MTYwNjMyMDEyNiwiZXhwIjoxNjM3ODU2MTI2fQ.i0MwbsbAfDc89vF0HqtU9FkAZZ9UFscxgqF5heOZ2EU"
+					},
+					{
+						"key": "uid",
+						"type": "text",
+						"value": "167",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8004/usermanager/v1/users/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8004",
+					"path": [
+						"usermanager",
+						"v1",
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
