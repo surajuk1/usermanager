@@ -1,0 +1,8 @@
+node_modules/
+server/config/config.js
+server/config/config.json
+error.log
+combined.log
+public/uploads
+doc
+.env

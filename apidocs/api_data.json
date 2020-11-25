@@ -1,0 +1,1633 @@
+[
+  {
+    "type": "post",
+    "url": "/v1/combo",
+    "title": "Add Combo",
+    "description": "<p>Add Combo</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "short_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "price",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "is_regular",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"create_combo_success\",\n  \"success_message\": \"Combo created successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"create_combo_failed\",\n \"message\": \"Failed to create Combo\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Validation Message:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"name\",\n \"message\": \"\\\"name\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Combo",
+    "filename": "server/controllers/product.js",
+    "groupTitle": "Combo",
+    "name": "PostV1Combo"
+  },
+  {
+    "type": "post",
+    "url": "/v1/combo_product",
+    "title": "Add Combo Product",
+    "description": "<p>Add Combo Product</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "combo_code",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "food_type",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "food_code",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"create_combo_product_success\",\n  \"success_message\": \"Combo Product created successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"create_combo_product_failed\",\n \"message\": \"Failed to create Combo Product\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Validation Message:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"combo_code\",\n \"message\": \"\\\"combo_code\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Combo_Product",
+    "filename": "server/controllers/product.js",
+    "groupTitle": "Combo_Product",
+    "name": "PostV1Combo_product"
+  },
+  {
+    "type": "get",
+    "url": "/v1/exit_entry",
+    "title": "Get Exit Entry List",
+    "description": "<p>Get Exit Entry List</p>",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"inventory_id\": \"2\",\n            \"quantity\": 1,\n            \"given_by\": \"3\",\n            \"received_by\": \"4\"\n        },\n    ],\n    \"meta\": {\n        \"offset\": 0,\n        \"limit\": 30\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"failed_to_list_exit_entry\",\n \"message\": \"Failed to list exit entry\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Exit_Entry",
+    "filename": "server/controllers/exit_entry.js",
+    "groupTitle": "Exit_Entry",
+    "name": "GetV1Exit_entry"
+  },
+  {
+    "type": "get",
+    "url": "/v1/exit_entry/:entry_id",
+    "title": "Get Exit Entry By Id",
+    "description": "<p>Get Exit Entry By Id</p>",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"inventory_id\": \"2\",\n            \"quantity\": 1,\n            \"given_by\": \"3\",\n            \"received_by\": \"4\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"list_inventory_failed\",\n \"message\": \"Failed to list inventory\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Exit_Entry",
+    "filename": "server/controllers/exit_entry.js",
+    "groupTitle": "Exit_Entry",
+    "name": "GetV1Exit_entryEntry_id"
+  },
+  {
+    "type": "post",
+    "url": "/v1/exit_inventory",
+    "title": "Add Exit Entry",
+    "description": "<p>Add Exit Entry</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "inventory_id",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "quantity",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"create_exit_entry_success\",\n  \"success_message\": \"Exit entry created successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"create_exit_entry_failed\",\n \"message\": \"Failed to create exit entry\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Validation Message:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"inventory_id\",\n \"message\": \"\\\"inventory_id\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Exit_Entry",
+    "filename": "server/controllers/exit_entry.js",
+    "groupTitle": "Exit_Entry",
+    "name": "PostV1Exit_inventory"
+  },
+  {
+    "type": "post",
+    "url": "/v1/mess_availability",
+    "title": "Add Mess Availability",
+    "description": "<p>Add Mess Availability</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "food_code",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "is_combo",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "date",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"create_mess_availability_success\",\n  \"success_message\": \"Mess Availability created successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"create_mess_availability_failed\",\n \"message\": \"Failed to create Mess availability\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Validation Message:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"food_code\",\n \"message\": \"\\\"food_code\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Mess",
+    "filename": "server/controllers/mess.js",
+    "groupTitle": "Mess",
+    "name": "PostV1Mess_availability"
+  },
+  {
+    "type": "post",
+    "url": "/v1/mess_menu",
+    "title": "Add Mess Menu",
+    "description": "<p>Add Mess Menu</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "short_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "price",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "is_regular",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"create_mess_menu_success\",\n  \"success_message\": \"Mess Menu created successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"create_mess_menu_failed\",\n \"message\": \"Failed to create Mess menu\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Validation Message:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"name\",\n \"message\": \"\\\"name\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Mess",
+    "filename": "server/controllers/mess.js",
+    "groupTitle": "Mess",
+    "name": "PostV1Mess_menu"
+  },
+  {
+    "type": "delete",
+    "url": "/v1/purchase/:purchase_id",
+    "title": "Delete Purchase",
+    "description": "<p>Delete Purchase</p>",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"delete_purchase_success\",\n  \"success_message\": \"Purchase deleted successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"delete_purchase_failed\",\n \"message\": \"Failed to delete purchase\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Purchase",
+    "filename": "server/controllers/purchase.js",
+    "groupTitle": "Purchase",
+    "name": "DeleteV1PurchasePurchase_id"
+  },
+  {
+    "type": "get",
+    "url": "/v1/purchase",
+    "title": "Get Puchase List",
+    "description": "<p>Get Purchase List</p>",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "limit",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "offset",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n    \"data\": [\n        {\n            \"dealer_name\": \"Test Dealer\",\n            \"dealer_address\": \"Test Address\",\n            \"dealer_phone\": \"\",\n            \"bill_no\": \"kl845456454\",\n            \"bill_date\": \"+045254-12-31T18:30:00.000Z\",\n            \"bill_amount\": 5000,\n            \"paid_amount\": 3000,\n            \"balance_amount\": 2000,\n            \"payment_status\": true,\n            \"payment_mode\": 2,\n            \"purchase_bill_url\": \"zjvnjdkljs.test\",\n            \"remarks\": \"\",\n            \"status\": true\n        }\n    ],\n    \"meta\": {\n        \"offset\": 0,\n        \"limit\": 30\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"list_purchase_failed\",\n \"message\": \"Failed to list purchases\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Purchase",
+    "filename": "server/controllers/purchase.js",
+    "groupTitle": "Purchase",
+    "name": "GetV1Purchase"
+  },
+  {
+    "type": "get",
+    "url": "/v1/purchase/:purchase_id",
+    "title": "Get Purchase By Id",
+    "description": "<p>Get Purchase By Id</p>",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n    \"data\": [\n        {\n            \"purchase_id\": \"3\",\n            \"dealer_name\": \"Test Dealer\",\n            \"dealer_address\": \"Test Address\",\n            \"dealer_phone\": \"\",\n            \"bill_no\": \"kl845456454\",\n            \"bill_date\": \"+045254-12-31T18:30:00.000Z\",\n            \"bill_amount\": 5000,\n            \"paid_amount\": 3000,\n            \"balance_amount\": 2000,\n            \"payment_status\": true,\n            \"payment_mode\": 2,\n            \"purchase_bill_url\": \"zjvnjdkljs.test\",\n            \"remarks\": \"\",\n            \"status\": true\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"list_purchase_failed\",\n \"message\": \"Failed to list purchase\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Purchase",
+    "filename": "server/controllers/purchase.js",
+    "groupTitle": "Purchase",
+    "name": "GetV1PurchasePurchase_id"
+  },
+  {
+    "type": "post",
+    "url": "/v1/purchase",
+    "title": "Add Purchase",
+    "description": "<p>Add Purchase</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "dealer_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "dealer_address",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "dealer_phone",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "bill_no",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "bill_date",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "bill_amount",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "paid_amount",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "payment_status",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "payment_mode",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "purchase_bill_url",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "remarks",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n    \"status\": true,\n    \"success\": \"create_purchase_success\",\n    \"success_message\": \"Purchase created successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "   HTTP 403\n{\n    \"status\": false,\n    \"error\": \"create_purchase_failed\",\n    \"message\": \"Failed to create purchase\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Validation Message:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"dealer_name\",\n \"message\": \"\\\"dealer_name\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Purchase",
+    "filename": "server/controllers/purchase.js",
+    "groupTitle": "Purchase",
+    "name": "PostV1Purchase"
+  },
+  {
+    "type": "put",
+    "url": "/v1/purchase/:purchase_id",
+    "title": "Update Purchase",
+    "description": "<p>Update Purchase</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "dealer_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "dealer_address",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "dealer_phone",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "bill_no",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "bill_date",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "bill_amount",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "paid_amount",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": true,
+            "field": "payment_status",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "payment_mode",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": true,
+            "field": "purchase_bill_url",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": true,
+            "field": "remarks",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n    \"status\": true,\n    \"success\": \"update_purchase_success\",\n    \"success_message\": \"Purchase updated successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "   HTTP 403\n{\n    \"status\": false,\n    \"error\": \"update_purchase_failed\",\n    \"message\": \"Failed to update purchase\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Validation Message:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"purchase_id\",\n \"message\": \"\\\"purchase_id\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Purchase",
+    "filename": "server/controllers/purchase.js",
+    "groupTitle": "Purchase",
+    "name": "PutV1PurchasePurchase_id"
+  },
+  {
+    "type": "delete",
+    "url": "/v1/stock_inventory/:inventory_id",
+    "title": "Delete Stock Inventory",
+    "description": "<p>Delete Stock Inventory</p>",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"delete_inventory_success\",\n  \"success_message\": \"Inventory deleted successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"delete_inventory_failed\",\n \"message\": \"Failed to delete inventory\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Stock_Inventory",
+    "filename": "server/controllers/stock_inventory.js",
+    "groupTitle": "Stock_Inventory",
+    "name": "DeleteV1Stock_inventoryInventory_id"
+  },
+  {
+    "type": "get",
+    "url": "/v1/stock_inventory",
+    "title": "Get Stock Inventory List",
+    "description": "<p>Get Stock Inventory List</p>",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "limit",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "offset",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n  {\n      \"data\": [\n          {\n              \"id\": \"1\",\n              \"name\": \"Test Inventory\",\n              \"description\": \"test description\",\n              \"short_name\": \"test_short_name\",\n              \"unit\": \"5\",\n              \"unit_type\": \"1\",\n              \"quantity\": 5,\n              \"status\": true\n          }\n      ],\n      \"meta\": {\n          \"offset\": 0,\n          \"limit\": 30\n      }\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"list_inventory_failed\",\n \"message\": \"Failed to list inventory\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Stock_Inventory",
+    "filename": "server/controllers/stock_inventory.js",
+    "groupTitle": "Stock_Inventory",
+    "name": "GetV1Stock_inventory"
+  },
+  {
+    "type": "get",
+    "url": "/v1/stock_inventory/:inventory_id",
+    "title": "Get Stock Inventory By Id",
+    "description": "<p>Get Stock Inventory By Id</p>",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n  {\n      \"data\": [\n          {\n              \"id\": \"1\",\n              \"name\": \"Test Inventory\",\n              \"description\": \"test description\",\n              \"short_name\": \"test_short_name\",\n              \"unit\": \"5\",\n              \"unit_type\": \"1\",\n              \"quantity\": 5,\n              \"status\": true\n          }\n      ]\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"list_inventory_failed\",\n \"message\": \"Failed to list inventory\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Stock_Inventory",
+    "filename": "server/controllers/stock_inventory.js",
+    "groupTitle": "Stock_Inventory",
+    "name": "GetV1Stock_inventoryInventory_id"
+  },
+  {
+    "type": "post",
+    "url": "/v1/stock_inventory",
+    "title": "Add Stock Inventory",
+    "description": "<p>Add Stock Inventory</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "short_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "model_no",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "unit",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "unit_type",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "quantity",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"create_inventory_success\",\n  \"success_message\": \"Inventory created successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"create_inventory_failed\",\n \"message\": \"Failed to create inventory\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Validation Message:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"model_no\",\n \"message\": \"\\\"model_no\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Stock_Inventory",
+    "filename": "server/controllers/stock_inventory.js",
+    "groupTitle": "Stock_Inventory",
+    "name": "PostV1Stock_inventory"
+  },
+  {
+    "type": "put",
+    "url": "/v1/stock_inventory/:inventory_id",
+    "title": "Update Stock Inventory",
+    "description": "<p>Update Stock Inventory</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "description",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "short_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "model_no",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "unit",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "unit_type",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "quantity",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": true,
+            "field": "status",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"update_inventory_success\",\n  \"success_message\": \"Inventory updated successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"update_inventory_failed\",\n \"message\": \"Failed to update inventory\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Stock_Inventory",
+    "filename": "server/controllers/stock_inventory.js",
+    "groupTitle": "Stock_Inventory",
+    "name": "PutV1Stock_inventoryInventory_id"
+  },
+  {
+    "type": "get",
+    "url": "/v1/store",
+    "title": "Get Store List",
+    "description": "<p>Get Store List</p>",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "offset",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "limit",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"inventory_id\": \"2\",\n            \"quantity\": 1,\n            \"given_by\": \"3\",\n            \"received_by\": \"4\"\n        },\n    ],\n    \"meta\": {\n        \"offset\": 0,\n        \"limit\": 30\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"failed_to_list_store\",\n \"message\": \"Failed to list store\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Store",
+    "filename": "server/controllers/stores.js",
+    "groupTitle": "Store",
+    "name": "GetV1Store"
+  },
+  {
+    "type": "get",
+    "url": "/v1/store/:store_id",
+    "title": "Get Store By Id",
+    "description": "<p>Get Store By Id</p>",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "store_id",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"inventory_id\": \"2\",\n            \"quantity\": 1,\n            \"given_by\": \"3\",\n            \"received_by\": \"4\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"list_inventory_failed\",\n \"message\": \"Failed to list inventory\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Store",
+    "filename": "server/controllers/stores.js",
+    "groupTitle": "Store",
+    "name": "GetV1StoreStore_id"
+  },
+  {
+    "type": "delete",
+    "url": "/v1/store_inventory/:inventory_id",
+    "title": "Delete Store Inventory",
+    "description": "<p>Delete Store Inventory</p>",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"delete_inventory_success\",\n  \"success_message\": \"Inventory deleted successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"delete_inventory_failed\",\n \"message\": \"Failed to delete inventory\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Store_Inventory",
+    "filename": "server/controllers/store_inventory.js",
+    "groupTitle": "Store_Inventory",
+    "name": "DeleteV1Store_inventoryInventory_id"
+  },
+  {
+    "type": "get",
+    "url": "/v1/stock_inventory",
+    "title": "Get Store Inventory List",
+    "description": "<p>Get Store Inventory List</p>",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "limit",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "offset",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n    \"data\": [\n        {\n            \"id\": \"2\",\n            \"name\": \"Test name\",\n            \"description\": \"Test description\",\n            \"short_name\": \"test\",\n            \"model_no\": \"kl2326565\",\n            \"tax_class_id\": \"1\",\n            \"tax_percentage\": 5,\n            \"unit\": \"1\",\n            \"unit_type\": \"5\",\n            \"quantity\": 30,\n            \"status\": true\n        },\n    ],\n    \"meta\": {\n        \"offset\": 0,\n        \"limit\": 30\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"list_inventory_failed\",\n \"message\": \"Failed to list inventory\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Store_Inventory",
+    "filename": "server/controllers/store_inventory.js",
+    "groupTitle": "Store_Inventory",
+    "name": "GetV1Stock_inventory"
+  },
+  {
+    "type": "get",
+    "url": "/v1/stock_inventory/:inventory_id",
+    "title": "Get Stock Inventory By Id",
+    "description": "<p>Get Stock Inventory By Id</p>",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n    \"data\": [\n        {\n            \"id\": \"2\",\n            \"name\": \"Test name\",\n            \"description\": \"Test description\",\n            \"short_name\": \"test\",\n            \"model_no\": \"kl2326565\",\n            \"tax_class_id\": \"1\",\n            \"tax_percentage\": 5,\n            \"unit\": \"1\",\n            \"unit_type\": \"5\",\n            \"quantity\": 30,\n            \"status\": true\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"list_inventory_failed\",\n \"message\": \"Failed to list inventory\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Store_Inventory",
+    "filename": "server/controllers/store_inventory.js",
+    "groupTitle": "Store_Inventory",
+    "name": "GetV1Stock_inventoryInventory_id"
+  },
+  {
+    "type": "post",
+    "url": "/v1/store_inventory",
+    "title": "Add Store Inventory",
+    "description": "<p>Add Store Inventory</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "short_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "model_no",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "tax_class_id",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "tax_percentage",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "unit",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "unit_type",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "quantity",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"create_inventory_success\",\n  \"success_message\": \"Inventory created successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"create_inventory_failed\",\n \"message\": \"Failed to create inventory\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Validation Message:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"model_no\",\n \"message\": \"\\\"model_no\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Store_Inventory",
+    "filename": "server/controllers/store_inventory.js",
+    "groupTitle": "Store_Inventory",
+    "name": "PostV1Store_inventory"
+  },
+  {
+    "type": "put",
+    "url": "/v1/store_inventory/:inventory_id",
+    "title": "Update Store Inventory",
+    "description": "<p>Update Store Inventory</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "description",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "short_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "model_no",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "tax_class_id",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "tax_percentage",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "unit",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "unit_type",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "quantity",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": true,
+            "field": "status",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"update_inventory_success\",\n  \"success_message\": \"Inventory updated successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"update_inventory_failed\",\n \"message\": \"Failed to update inventory\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Store_Inventory",
+    "filename": "server/controllers/store_inventory.js",
+    "groupTitle": "Store_Inventory",
+    "name": "PutV1Store_inventoryInventory_id"
+  },
+  {
+    "type": "post",
+    "url": "/v1/common_users",
+    "title": "User registration",
+    "description": "<p>User registration</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "full_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "confirm_password",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "user_role",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "mobile",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "store_id",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"success\": \"otp_success\",\n  \"success_message\": \"User registered successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n  \"error\": \"user_registration_failed\",\n  \"error_message\": \"User registration failed. Try again!\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Verification pending Error-Response:",
+          "content": "HTTP 403\n{\n  \"error\": \"mobile_verification_pending\",\n  \"error_message\": \"Mobile no: has been used once and verification pending\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "Users",
+    "filename": "server/controllers/users.js",
+    "groupTitle": "Users",
+    "name": "PostV1Common_users"
+  },
+  {
+    "type": "post",
+    "url": "/v1/store",
+    "title": "Add Store",
+    "description": "<p>Add Store</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "short_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK\n{\n  \"status\": true,\n  \"success\": \"create_store_success\",\n  \"success_message\": \"Store created successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"create_store_failed\",\n \"message\": \"Failed to create store\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Validation Message:",
+          "content": "HTTP 403\n{\n \"status\": false,\n \"error\": \"name\",\n \"message\": \"\\\"name\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "group": "store",
+    "filename": "server/controllers/stores.js",
+    "groupTitle": "store",
+    "name": "PostV1Store"
+  }
+]

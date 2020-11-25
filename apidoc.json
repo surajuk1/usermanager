@@ -1,0 +1,8 @@
+{
+    "name": "User Management API",
+    "version": "1.0.0",
+    "description": "https://google.com",
+    "template": {
+        "forceLanguage": "en"
+    }
+}
